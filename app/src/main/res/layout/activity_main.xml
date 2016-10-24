@@ -10,8 +10,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.a34011_73_08.appsecours.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/buttonSamu"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/samu"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonPolice"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/police"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/buttonPompier"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/pompier"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/buttonSamu"/>
+
+
 </RelativeLayout>
