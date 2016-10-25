@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppSecours</string>
+    <string name="appwidget_text">Secours </string>
+    <string name="add_widget">Add widget</string>
 </resources>
