@@ -1,7 +1,6 @@
 package com.example.a34011_73_08.appsecours;
 
 import android.Manifest;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -20,6 +19,12 @@ import android.widget.Button;
 
 public class ChooseActivity extends AppCompatActivity {
 
+    private String numPolice = "0634239221";
+    private String numPompier = "0660506838";
+    private String numSamu = "12";
+    private String selectedTel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,43 +36,34 @@ public class ChooseActivity extends AppCompatActivity {
         Button samu = (Button) findViewById(R.id.buttonSamu);
 
 
-        setListener(police, "0634239221");
-        setListener(pompier, "0660506838");
-        setListener(samu, "2");
+        setListener(police, numPolice);
+        setListener(pompier, numPompier);
+        setListener(samu, numSamu);
 
 
     }
 
-//@TODO résoudre appel direct
     public void setListener(Button button, final String tel) {
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-                try {
-                    Intent intent = new Intent(Intent.ACTION_CALL);
-                    intent.setData(Uri.parse("tel:" + tel));
-                    startActivity(intent);
-                } catch (ActivityNotFoundException | SecurityException e) {
-                    Log.e("Ceci est l'erreur", "appel a echoué", e);
-                }
-
+                onCall(tel);
             }
         });
 
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        switch(requestCode){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
             case 123:
-            if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                onCall();
-            } else {
-                Log.d("TAG", "Call Permission Not Granted");
-            }
-            break;
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    onCall(selectedTel);
+                } else {
+                    Log.d("TAG", "Call Permission Not Granted");
+                }
+                break;
 
             default:
                 break;
@@ -75,15 +71,13 @@ public class ChooseActivity extends AppCompatActivity {
 
     }
 
-    public void onCall(final String tel){
+    public void onCall(final String tel) {
 
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
 
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                    this,
-                    new String[]{Manifest.permission.CALL_PHONE},
-                    123);
+            this.selectedTel = tel;
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 123);
         } else {
             startActivity(new Intent(Intent.ACTION_CALL).setData(Uri.parse("tel:" + tel)));
         }
