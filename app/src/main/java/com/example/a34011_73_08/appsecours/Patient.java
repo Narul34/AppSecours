@@ -8,11 +8,13 @@ public class Patient extends Person {
 
     private String bloodType;
     private String infosComp;
+    private Doctor doctor;
 
-    public Patient(String firstName, String lastName, int age, String adress, int telephone, String bloodType, String infosComp) {
-        super(firstName, lastName, age, adress, telephone);
+    public Patient(String firstName, String lastName, String age, String sexe, String adress, String telephone, String bloodType, String infosComp, Doctor doctor) {
+        super(firstName, lastName, age, sexe, adress, telephone);
         this.bloodType = bloodType;
         this.infosComp = infosComp;
+        this.doctor = doctor;
     }
 
     public String getBloodType() {
@@ -29,5 +31,26 @@ public class Patient extends Person {
 
     public void setInfosComp(String infosComp) {
         this.infosComp = infosComp;
+    }
+
+    public String getDoctor() {
+        String ficheDoc = doctor.getAll();
+        return ficheDoc;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    @Override
+    public String getAll(){
+        String all = super.getAll();
+        all  += "\n" + getBloodType() + "\n" + getInfosComp();
+
+        if(doctor != null){
+            all += "\n" + getDoctor();
+        }
+        return all;
+
     }
 }

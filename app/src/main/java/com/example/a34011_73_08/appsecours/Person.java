@@ -8,18 +8,19 @@ public abstract class Person {
 
     private String firstName;
     private String lastName;
-    private int age;
+    private String age;
+    private String sexe;
     private String adress;
-    private int telephone;
+    private String telephone;
 
 
-    public Person(String firstName, String lastName, int age, String adress, int telephone) {
+    public Person(String firstName, String lastName, String age, String sexe, String adress, String telephone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.sexe = sexe;
         this.adress = adress;
         this.telephone = telephone;
-
     }
 
     public String getFirstName() {
@@ -38,11 +39,11 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -54,12 +55,26 @@ public abstract class Person {
         this.adress = adress;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public String getAll() {
+        String all = getFirstName() + "\n" + getLastName() + "\n" +
+                getAge() + "\n" + getAdress() + "\n" + getTelephone() + "\n" + getSexe();
+        return all;
     }
 
 
