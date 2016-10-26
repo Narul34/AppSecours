@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AppSecours</string>
-<<<<<<< HEAD
     <string name="nom">First Name</string>
     <string name="prenom">Last Name</string>
     <string name="age">Age</string>
@@ -11,9 +10,6 @@
     <string name="adress">Adress</string>
     <string name="doctor">Your Doctors name</string>
     <string name="drphone">Doctors Phone</string>
-
-=======
     <string name="appwidget_text">Secours </string>
     <string name="add_widget">Add widget</string>
->>>>>>> refs/remotes/origin/Lulu
 </resources>
