@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".ChooseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.CALL"/>
@@ -23,6 +24,18 @@
         </activity>
         <activity android:name=".Formulaire"></activity>
 
+=======
+
+        <receiver android:name=".SecoursWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/secours_widget_info" />
+        </receiver>
+>>>>>>> refs/remotes/origin/Lulu
     </application>
 
 </manifest>
