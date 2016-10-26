@@ -2,7 +2,8 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialKeyguardLayout="@layout/secours_widget"
     android:initialLayout="@layout/secours_widget"
-    android:minHeight="300dp"
-    android:minWidth="170dp"
+    android:minHeight="110dp"
+    android:minWidth="240dp"
     android:updatePeriodMillis="0"
-    android:widgetCategory="home_screen|keyguard"></appwidget-provider>
+    android:widgetCategory="home_screen|keyguard"
+    android:resizeMode="horizontal|vertical"></appwidget-provider>

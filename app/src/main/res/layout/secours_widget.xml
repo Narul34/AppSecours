@@ -1,32 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:padding="@dimen/widget_margin">
 
 
     <GridLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/fond_widget">
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:id="@+id/pompier"
-            android:background="@drawable/logopompier"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:layout_gravity="center_horizontal" />
+        android:background="@drawable/fond_widget"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <Button
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@drawable/samu"
             android:id="@+id/samu"
-            android:layout_gravity="bottom|center_horizontal"
+            android:layout_gravity="top|center_horizontal"
 
 
             android:layout_row="0"
@@ -37,7 +29,9 @@
             android:layout_height="70dp"
             android:id="@+id/police"
             android:background="@drawable/police"
-            android:layout_gravity="bottom|center_horizontal"
+            android:layout_gravity="top|center_horizontal"
+
+
             android:layout_row="0"
             android:layout_column="0" />
 
@@ -47,13 +41,23 @@
             android:id="@+id/button112"
             android:background="@drawable/num112"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
 
 
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_gravity="bottom|center_horizontal" />
+            android:layout_gravity="top|center_horizontal" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/pompier"
+            android:background="@drawable/logopompier"
+
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="top|center_horizontal" />
 
 
     </GridLayout>
