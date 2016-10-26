@@ -31,12 +31,11 @@ public class SecoursWidget extends AppWidgetProvider {
 
 
             // Prepare intent to launch on widget click
-            Intent intent = new Intent(context, SecoursWidget.class);
-            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
-            intent.setAction(appWidgetManager.ACTION_APPWIDGET_UPDATE);
+            Intent intent = new Intent(context, MainActivity.class);
 
             // Launch intent on widget click
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+
             views.setOnClickPendingIntent(R.id.button112, pendingIntent);
 
             appWidgetManager.updateAppWidget(appWidgetIds, views);
