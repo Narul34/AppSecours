@@ -2,11 +2,9 @@ package com.example.a34011_73_08.appsecours;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -16,31 +14,39 @@ import java.io.IOException;
 
 public class PersFile {
 
-    FileInputStream in = null;
-    FileOutputStream out = null;
+    private Context context;
+    private FileInputStream in = null;
+    private FileOutputStream out = null;
 
+
+    public PersFile(Context context){
+        this.context = context;
+    }
 
 
     public void write( String infosPatient){
         try {
-            File file = new File("fiche_patient.txt");
-            out = new FileOutputStream(file);
+            out = context.openFileOutput("fiche_patient.txt", Context.MODE_PRIVATE);
+           // String path = context.getFilesDir().getPath() + "/fiche_patient.txt";
+            File file = new File(context.getFilesDir() + "/fiche_patient.txt");
+
 
             for (int i = 0; i < infosPatient.length(); i++){
-                int caractere = infosPatient.charAt(i);
-                out.write(caractere);
+               // int caractere = infosPatient.charAt(i);
+                Log.d("Le caractere : ", infosPatient);
+                out.write(infosPatient.getBytes());
             }
+
 
 
             if (file.exists()){
                 read(file);
+                Log.d("tes dans le READ :", "niquel");
             }
 
             if(out != null)
                 out.close();
-        }catch(FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e) {
+        }catch(IOException e){
             e.printStackTrace();
         }
 
@@ -50,14 +56,12 @@ public class PersFile {
 
         try{
             in = new FileInputStream(file);
-            int caractere;
-
+            StringBuffer sb = new StringBuffer();
+            sb.append((char)4);
             while (( in.read()) != -1) {
                 Log.d("FICHIER", file.toString());
             }
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e){
             e.printStackTrace();
         }

@@ -73,7 +73,7 @@ public abstract class Person {
 
     public String getAll() {
         String all = getFirstName() + "\n" + getLastName() + "\n" +
-                getAge() + "\n" + getAdress() + "\n" + getTelephone() + "\n" + getSexe();
+                getAge() + "\n" + getSexe()+"\n" + getAdress() + "\n" + getTelephone() ;
         return all;
     }
 

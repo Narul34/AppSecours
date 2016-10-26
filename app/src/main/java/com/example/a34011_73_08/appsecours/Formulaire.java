@@ -97,7 +97,8 @@ public class Formulaire extends AppCompatActivity {
 
     public void stockData() {
 
-        PersFile pf = new PersFile();
+        Log.d("DEBUT CLICK", "debut");
+        PersFile pf = new PersFile(Formulaire.this);
 
         checkRadioButtonState();
 
@@ -112,7 +113,10 @@ public class Formulaire extends AppCompatActivity {
 
         patient = new Patient(firstName, lastName, age, sexe, adress, phone, blood, infosComp, null);
 
+        Log.d("AVANT WRITE", "AVANT WRITE");
         pf.write(patient.getAll());
+
+        Log.d("APRES WRITE", "APRES WRITE");
 
         showNotif(Formulaire.this, "Ecriture reussi");
 
