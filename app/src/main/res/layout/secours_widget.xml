@@ -5,35 +5,35 @@
     android:padding="@dimen/widget_margin">
 
 
-    <GridLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/fond_widget"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:background="@drawable/fond_widget">
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/ic_samu"
-            android:id="@+id/buttonWsamu"
-            android:layout_gravity="top|center_horizontal"
 
-
-            android:layout_row="0"
-            android:layout_column="2" />
-
-        <Button
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:id="@+id/buttonWpolice"
             android:background="@drawable/ic_police"
-            android:layout_gravity="top|center_horizontal"
+            android:layout_gravity="top"
 
 
             android:layout_row="0"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/buttonWpompier"
+            android:background="@drawable/ic_logopompier"
+
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_gravity="top"
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="100dp"
@@ -47,19 +47,20 @@
 
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_gravity="top|center_horizontal" />
+            android:layout_gravity="top"
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:id="@+id/buttonWpompier"
-            android:background="@drawable/ic_logopompier"
+            android:background="@drawable/ic_samu"
+            android:id="@+id/buttonWsamu"
+            android:layout_gravity="top"
+
 
             android:layout_row="0"
-            android:layout_column="3"
-            android:layout_gravity="top|center_horizontal" />
-
-
-    </GridLayout>
+            android:layout_column="2"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </RelativeLayout>

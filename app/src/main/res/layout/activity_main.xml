@@ -11,14 +11,6 @@
     tools:context="com.example.a34011_73_08.appsecours.MainActivity">
 
     <Button
-        android:id="@+id/buttonService"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="@drawable/icone"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:id="@+id/buttonForm"
         android:layout_width="125dp"
         android:layout_height="80dp"
@@ -27,6 +19,13 @@
         android:layout_marginBottom="38dp"
         android:text="Vos Informations"/>
 
+    <Button
+        android:id="@+id/buttonService"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/ic_icone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
