@@ -4,62 +4,104 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/firstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/nom"
-        android:inputType="text"
-        android:maxLength="20"
-        android:maxLines="1"/>
 
-    <EditText
-        android:id="@+id/lastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/prenom"
-        android:inputType="text"
-        android:maxEms="20"
-        android:minEms="1"
-        android:maxLength="20"
-        android:maxLines="1"/>
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/age"
-        android:inputType="numberDecimal"
-        android:maxLength="2"
-        android:maxLines="1"/>
-
-    <RadioGroup
-        android:id="@+id/sexe"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Gender"
-                android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="First Name"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Last Name"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Age"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxLength="3"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:text="Gender"
+            android:textSize="18dp" />
+
+        <RadioGroup
+            android:id="@+id/sexe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
 
             <RadioButton
                 android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/male"/>
+                android:layout_marginRight="45dp"
+                android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/female"/>
+                android:text="@string/female" />
 
 
-    </RadioGroup>
+        </RadioGroup>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -70,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Bloodtype"
-            android:textSize="18dp"/>
+            android:textSize="18dp" />
 
         <Spinner
             android:id="@+id/blood"
@@ -79,52 +121,107 @@
             android:prompt="@string/blood" />
     </LinearLayout>
 
-
-    <EditText
-        android:id="@+id/phone"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/phone"
-        android:inputType="phone"
-        android:maxLength="10"/>
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/adress"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Phone"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="10" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/adress"
-        android:inputType="phone"
-        android:maxLength="10"/>
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Adress"
+            android:textSize="18dp" />
 
-    <EditText
-        android:id="@+id/doctor"
+        <EditText
+            android:id="@+id/adress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/doctor" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/drtel"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Your Doctor's name"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/doctorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/drphone"
-        android:inputType="phone"
-        android:maxLength="10"/>
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/infoscomp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Doctor's Phone"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/drtel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="10" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:hint="Allergy, antecedent, other details"
-        android:inputType="textMultiLine"
-        android:maxLines="3"
-        android:maxLength="100"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Allergy, medicals episodes,..."
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/infoscomp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLength="100" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="submit"/>
+        android:text="submit" />
 
 </TableLayout>

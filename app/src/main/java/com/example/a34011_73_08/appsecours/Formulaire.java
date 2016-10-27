@@ -40,9 +40,9 @@ public class Formulaire extends AppCompatActivity {
     private EditText adress;
     private EditText infosComp;
 
-    private Patient patient;
+    private EditText drName;
+    private EditText drNum;
     private Doctor doctor;
-    private String drTel;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -64,6 +64,9 @@ public class Formulaire extends AppCompatActivity {
         adress = (EditText) findViewById(R.id.adress);
         phone = (EditText) findViewById(R.id.phone);
         infosComp = (EditText) findViewById(R.id.infoscomp);
+        drName = (EditText) findViewById(R.id.doctorName);
+        drNum = (EditText) findViewById(R.id.drtel);
+
 
         initSpinner();
 
@@ -114,6 +117,8 @@ public class Formulaire extends AppCompatActivity {
     public void stockData() {
         checkRadioButtonState();
 
+        doctor = new Doctor(drName.getText().toString(), drNum.getText().toString());
+
         editor.putString("firstName", firstName.getText().toString());
         editor.putString("lastName", lastName.getText().toString());
         editor.putString("age", age.getText().toString());
@@ -122,6 +127,8 @@ public class Formulaire extends AppCompatActivity {
         editor.putString("phone", phone.getText().toString());
         editor.putString("index", Integer.toString(index));
         editor.putString("infosComp", infosComp.getText().toString());
+        editor.putString("docteurName", doctor.getName());
+        editor.putString("docteurNum", doctor.getNum());
         editor.commit();
 
     }
@@ -130,14 +137,16 @@ public class Formulaire extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String firstName = sharedPreferences.getString("firstName", "First name?");
-        String lastName = sharedPreferences.getString("lastName", "Last name?");
-        String age = sharedPreferences.getString("age", "age?");
-        String sexe = sharedPreferences.getString("sexe", "gender?");
-        String adress = sharedPreferences.getString("adress", "adress?");
-        String phone = sharedPreferences.getString("phone", "phone?");
+        String firstName = sharedPreferences.getString("firstName", "");
+        String lastName = sharedPreferences.getString("lastName", "");
+        String age = sharedPreferences.getString("age", "");
+        String sexe = sharedPreferences.getString("sexe", "");
+        String adress = sharedPreferences.getString("adress", "");
+        String phone = sharedPreferences.getString("phone", "");
         String index = sharedPreferences.getString("index", "0");
-        String infosComp = sharedPreferences.getString("infosComp", "-");
+        String infosComp = sharedPreferences.getString("infosComp", "");
+        String docteurName = sharedPreferences.getString("docteurName", "");
+        String docteurNum = sharedPreferences.getString("docteurNum", "");
 
         this.firstName.setText(firstName);
         this.lastName.setText(lastName);
@@ -159,6 +168,8 @@ public class Formulaire extends AppCompatActivity {
         this.phone.setText(phone);
         this.adress.setText(adress);
         this.infosComp.setText(infosComp);
+        this.drName.setText(docteurName);
+        this.drNum.setText(docteurNum);
 
     }
 

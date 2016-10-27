@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/widget_margin">
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -12,51 +11,43 @@
         android:background="@drawable/fond_widget">
 
         <Button
-
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:id="@+id/buttonWpolice"
-            android:background="@drawable/ic_police"
-            android:layout_gravity="top"
-
-
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:id="@+id/buttonWpompier"
-            android:background="@drawable/ic_logopompier"
-
-            android:layout_row="0"
-            android:layout_column="4"
-            android:layout_gravity="top"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/buttonW112"
             android:background="@drawable/ic_num112"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
 
-
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_gravity="top"
+
             android:layout_weight="1" />
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonWpompier"
+            android:background="@drawable/ic_logopompier"
+
+            android:layout_row="0"
+            android:layout_column="4" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonWpolice"
+            android:background="@drawable/ic_police"
+
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/ic_samu"
             android:id="@+id/buttonWsamu"
-            android:layout_gravity="top"
-
 
             android:layout_row="0"
             android:layout_column="2"

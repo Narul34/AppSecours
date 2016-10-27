@@ -4,30 +4,31 @@ package com.example.a34011_73_08.appsecours;
  * Created by 34011-73-08 on 24/10/2016.
  */
 
-public class Doctor extends Person {
+public class Doctor {
 
 
-    //Doctor's national id
-    private String adeli;
+    private String name;
+    private String num;
 
-    public Doctor(String firstName, String lastName, String age, String sexe, String adress, String telephone, String adeli) {
-        super(firstName, lastName, age, sexe, adress, telephone);
-        this.adeli = adeli;
+    public Doctor(String name, String num) {
+        this.name = name;
+        this.num = num;
     }
 
-    public String getAdeli() {
-        return adeli;
+    public String getNum() {
+        return num;
     }
 
-    public void setAdeli(String adeli) {
-        this.adeli = adeli;
+    public void setNum(String num) {
+        this.num = num;
     }
 
-    @Override
-    public String getAll(){
-        String all = super.getAll();
-        all += " - " + getAdeli();
-        return all;
+    public String getName() {
+
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }
