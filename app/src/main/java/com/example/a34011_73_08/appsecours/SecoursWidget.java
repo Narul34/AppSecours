@@ -26,17 +26,25 @@ public class SecoursWidget extends AppWidgetProvider {
 
         for (int i = 0; i < count; i++) {
             int widgetId = appWidgetIds[i];
+
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.secours_widget);
 
 
+            CustomIntent police = new CustomIntent(context, "police", views, R.id.buttonWpolice);
+            CustomIntent samu = new CustomIntent(context, "samu", views, R.id.buttonWsamu);
+            CustomIntent le112 = new CustomIntent(context, "le112", views, R.id.buttonW112);
+            CustomIntent pompier = new CustomIntent(context, "pompier", views, R.id.buttonWpompier);
+
 
             // Prepare intent to launch on widget click
-            Intent intent = new Intent(context, MainActivity.class);
+
+
+
 
             // Launch intent on widget click
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-            views.setOnClickPendingIntent(R.id.button112, pendingIntent);
+
+
 
             appWidgetManager.updateAppWidget(appWidgetIds, views);
 
@@ -54,10 +62,6 @@ public class SecoursWidget extends AppWidgetProvider {
         // Enter relevant functionality for when the last widget is disabled
     }
 
-    protected void showNotification(Context context, String message) {
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, message, duration);
-        toast.show();
-    }
+
 }
 

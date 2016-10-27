@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button service = (Button) findViewById(R.id.buttonService);
+
         Button formulaire = (Button) findViewById(R.id.buttonForm);
-        setListener(service, ChooseActivity.class);
+
         setListener(formulaire, Formulaire.class);
     }
 
